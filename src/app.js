@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 function copyFiles(sourceFile, destinationFile) {
-  if (sourceFile === undefined || destinationFile === undefined) {
+  if (arguments.length < 2) {
     // eslint-disable-next-line no-console
     console.error('error: the function takes 2 arguments');
 

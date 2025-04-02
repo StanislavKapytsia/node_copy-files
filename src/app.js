@@ -5,7 +5,7 @@ const fs = require('fs');
 function copyFiles(sourceFile, destinationFile) {
   if (sourceFile === undefined || destinationFile === undefined) {
     // eslint-disable-next-line no-console
-    console.error('error: the function takes 3 arguments');
+    console.error('error: the function takes 2 arguments');
 
     return;
   }
@@ -49,4 +49,9 @@ const args = process.argv.slice(2);
 const filePath = args[0];
 const copyPath = args[1];
 
-copyFiles(filePath, copyPath);
+if (args.length === 2) {
+  copyFiles(filePath, copyPath);
+} else {
+  // eslint-disable-next-line no-console
+  console.error('error: the function takes 2 arguments');
+}
